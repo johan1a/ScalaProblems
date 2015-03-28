@@ -22,4 +22,16 @@ object ArraysAndStrings {
     }
     result
   }
+
+  /*
+  * 1.2 Write code to reverse a C-Style String. (C-String means that “abcd” is represented as
+  * five characters, including the null character.)
+  */
+
+  val NullChar: Char = '\n'
+
+  def reverseCString(str: Seq[Char]): Array[Char] = {
+    str.takeWhile((c: Char) => c != NullChar).reverse.toArray :+ NullChar
+  }
+
 }
