@@ -78,5 +78,37 @@ object ArraysAndStrings {
     str.toLowerCase.filter((c: Char) => !c.isWhitespace).sorted
   }
 
+  /*
+  * 1.5 Write a method to replace all spaces in a string with ‘%20’
+   */
+  def replaceWhiteSpace(str: String): String = {
+    str.replace("\n", "%20")
+  }
+
+  /*
+  * 1.6 Given an image represented by an NxN matrix, where each pixel in the image is 4
+  * bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+   */
+
+  type Pixel = Int
+
+  class Image(var pixels: Array[Array[Pixel]]) {
+
+    def this(n: Int) {
+      this(Array.ofDim[Pixel](n, n))
+    }
+  }
+
+  def rotate(img: Image): Image = {
+    val n = img.pixels.length
+    val rotated = new Image(n)
+    for (j <- 0 until n) {
+      for (i <- 0 until n) {
+        rotated.pixels(j)(i) = img.pixels(n - 1 - i)(j)
+      }
+    }
+    rotated
+  }
+
 
 }

@@ -51,4 +51,23 @@ class ArraysAndStringsSpec extends Specification {
       isAnagram("anagramtjänst", "jama ansträngt") must_== true
     }
   }
+
+  "rotate image" should {
+    "rotate an image" in {
+
+      val pixels = Array(
+        Array(0, 1),
+        Array(2, 3)
+      )
+
+      val rotatedPixels = Array(
+        Array(2, 0),
+        Array(3, 1)
+      )
+
+      val img = new Image(pixels)
+      val rotated = new Image(rotatedPixels)
+      rotate(img).pixels must_== rotated.pixels
+    }
+  }
 }
