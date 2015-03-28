@@ -31,6 +31,7 @@ class ArraysAndStringsSpec extends Specification {
       removeDuplicates("aab") must_== "ab"
     }
   }
+
   "removeDuplicates2" should {
     "remove duplicate characters in a string" in {
       removeDuplicates2("abcda") must_== "abcd"
@@ -41,6 +42,13 @@ class ArraysAndStringsSpec extends Specification {
       removeDuplicates2("abba") must_== "ab"
       removeDuplicates2("aab") must_== "ab"
     }
+  }
 
+  "isAnagram" should {
+    "check if two strings are anagrams" in {
+      isAnagram("anagram", "magarna") must_== true
+      isAnagram("Henrik Schyffert", "Fin tysk herrchef") must_== true
+      isAnagram("anagramtjänst", "jama ansträngt") must_== true
+    }
   }
 }

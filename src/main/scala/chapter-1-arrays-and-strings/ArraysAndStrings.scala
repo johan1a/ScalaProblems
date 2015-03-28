@@ -65,5 +65,18 @@ object ArraysAndStrings {
     mutableStr
   }
 
+  /*
+  * 1.4 Write a method to decide if two strings are anagrams or not.
+  */
+  def isAnagram(str1: String, str2: String): Boolean = {
+    val a = prepForAnagramCheck(str1)
+    val b = prepForAnagramCheck(str2)
+    prepForAnagramCheck(str1) == prepForAnagramCheck(str2)
+  }
+
+  def prepForAnagramCheck(str: String): String = {
+    str.toLowerCase.filter((c: Char) => !c.isWhitespace).sorted
+  }
+
 
 }
